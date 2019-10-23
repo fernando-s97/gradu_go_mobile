@@ -80,8 +80,8 @@ class _LoginFragmentState extends State<LoginFragment> {
 
   _buildContacts() => Util.buildExternalWithDescription(
       context,
-      'tel://+55012996270806',
-      Util.PHONE_IMG_PATH,
+      'whatsapp://send?phone=+55012996270806',
+      Util.WHATSAPP_IMG_PATH,
       'NÃO CONSEGUE ACESSAR?',
       'Entre em contato conosco');
 
