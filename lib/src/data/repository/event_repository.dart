@@ -3,7 +3,9 @@ import 'package:gradu_go/src/data/data_source/gradu_go_api/gradu_go_api.dart';
 import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_event.dart';
 import 'package:gradu_go/src/domain/model/event.dart';
 import 'package:gradu_go/src/domain/repository/event_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: EventRepository)
 final class EventRepositoryImpl implements EventRepository {
   const EventRepositoryImpl({required GraduGoApi graduGoApi})
       : _graduGoApi = graduGoApi;

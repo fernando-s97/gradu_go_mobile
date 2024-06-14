@@ -3,7 +3,9 @@ import 'package:gradu_go/src/data/data_source/gradu_go_api/gradu_go_api.dart';
 import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_graduate.dart';
 import 'package:gradu_go/src/domain/model/graduate.dart';
 import 'package:gradu_go/src/domain/repository/graduate_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: GraduateRepository)
 final class GraduateRepositoryImpl implements GraduateRepository {
   const GraduateRepositoryImpl({required GraduGoApi graduGoApi})
       : _graduGoApi = graduGoApi;

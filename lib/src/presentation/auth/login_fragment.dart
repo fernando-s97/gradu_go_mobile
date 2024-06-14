@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:gradu_go/src/core/dependency_injection.dart';
 import 'package:gradu_go/src/domain/model/graduate.dart';
+import 'package:gradu_go/src/domain/use_case/authenticate_graduate_use_case.dart';
+import 'package:gradu_go/src/domain/use_case/get_graduate_details_use_case.dart';
 import 'package:gradu_go/src/helpers/util.dart';
 import 'package:gradu_go/src/presentation/digital_id_card/digital_id_card_page.dart';
 
@@ -107,7 +110,12 @@ final class _LoginFragmentState extends State<LoginFragment> {
     try {
       try {
         final authenticationResult =
-            await GraduateDao.authenticate(_userTEC.text, _passwordTEC.text);
+            await getIt<AuthenticateGraduateUseCase>().invoke(
+          credential: GraduateCredential(
+            email: _userTEC.text,
+            password: _passwordTEC.text,
+          ),
+        );
         if (authenticationResult != '1') {
           throw Exception('Usuário e/ou senha incorretos');
         }
@@ -117,21 +125,15 @@ final class _LoginFragmentState extends State<LoginFragment> {
         );
       }
 
-      List<Graduate> graduatesList;
-      try {
-        graduatesList = await GraduateDao.read(_userTEC.text);
-        if (graduatesList.isEmpty) {
-          throw Exception('Formando não encontrado');
-        }
-      } on Exception {
-        throw Exception('Falha ao recuperar seus dados');
-      }
+      final graduate =
+          await getIt<GetGraduateDetailsUseCase>().invoke(id: _userTEC.text);
+      if (graduate == null) throw Exception('Falha ao recuperar seus dados');
 
       if (mounted) {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (BuildContext context) =>
-                DigitalIdCard(graduate: graduatesList[0]),
+                DigitalIdCard(graduate: graduate),
           ),
         );
 

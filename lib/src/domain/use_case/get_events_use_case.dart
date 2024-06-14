@@ -1,11 +1,14 @@
 import 'package:gradu_go/src/domain/model/event.dart';
 import 'package:gradu_go/src/domain/repository/event_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 final class GetEventsUseCase {
-  GetEventsUseCase({required EventRepository eventRepository})
+  const GetEventsUseCase({required EventRepository eventRepository})
       : _eventRepository = eventRepository;
 
   final EventRepository _eventRepository;
 
-  Future<List<Event>?> call() => _eventRepository.getAll();
+  Future<List<Event>?> invoke({String? name, String? city, String? segment}) =>
+      _eventRepository.getAll();
 }

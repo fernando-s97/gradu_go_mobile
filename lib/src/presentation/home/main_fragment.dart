@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gradu_go/src/data/event_dao.dart';
-import 'package:gradu_go/src/data/partner_dao.dart';
+import 'package:gradu_go/src/core/dependency_injection.dart';
+import 'package:gradu_go/src/domain/use_case/get_events_use_case.dart';
+import 'package:gradu_go/src/domain/use_case/get_partners_use_case.dart';
 import 'package:gradu_go/src/helpers/events_list.dart';
 import 'package:gradu_go/src/helpers/partners_list.dart';
 import 'package:gradu_go/src/helpers/repository.dart';
@@ -73,7 +74,7 @@ final class _MainFragmentState extends State<MainFragment> {
   Widget _buildEventsList() {
     if (Repository.events.isEmpty) {
       return FutureBuilder(
-        future: EventDao.read(),
+        future: getIt<GetEventsUseCase>().invoke(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             Repository.events = snapshot.data ?? [];
@@ -182,11 +183,12 @@ final class _MainFragmentState extends State<MainFragment> {
       ? PartnersList(Repository.partners)
       : FutureBuilder(
           future: Repository.filterType == FilterType.citySegment
-              ? PartnerDao.readByCitySegment(
-                  Repository.currentCity,
-                  Repository.currentSegment,
+              ? getIt<GetPartnersUseCase>().invoke(
+                  city: Repository.currentCity,
+                  segment: Repository.currentSegment,
                 )
-              : PartnerDao.read(Repository.searchedPartner),
+              : getIt<GetPartnersUseCase>()
+                  .invoke(name: Repository.searchedPartner),
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
               return const Center(child: CircularProgressIndicator());

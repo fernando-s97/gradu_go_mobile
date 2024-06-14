@@ -21,21 +21,13 @@ GraduGoPartner _$GraduGoPartnerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$GraduGoPartner {
   String get id => throw _privateConstructorUsedError;
-
   String get logo => throw _privateConstructorUsedError;
-
   String get name => throw _privateConstructorUsedError;
-
   String? get address => throw _privateConstructorUsedError;
-
   String? get phone => throw _privateConstructorUsedError;
-
   String? get facebook => throw _privateConstructorUsedError;
-
   String? get instagram => throw _privateConstructorUsedError;
-
   String? get discount => throw _privateConstructorUsedError;
-
   String? get segments => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -132,28 +124,20 @@ abstract class _GraduGoPartner implements GraduGoPartner {
 
   @override
   String get id;
-
   @override
   String get logo;
-
   @override
   String get name;
-
   @override
   String? get address;
-
   @override
   String? get phone;
-
   @override
   String? get facebook;
-
   @override
   String? get instagram;
-
   @override
   String? get discount;
-
   @override
   String? get segments;
 }

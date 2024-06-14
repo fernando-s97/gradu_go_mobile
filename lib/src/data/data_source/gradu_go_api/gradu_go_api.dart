@@ -4,10 +4,13 @@ import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_gradua
 import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_partner.dart';
 import 'package:gradu_go/src/data/http_client/app_http_client.dart';
 import 'package:gradu_go/src/data/http_client/model/app_http_client_base_options.dart';
+import 'package:injectable/injectable.dart';
 
+@lazySingleton
 final class GraduGoApi {
   final AppHttpClient _httpClient = AppHttpClientBuilder()
-      .baseOptions(const AppHttpClientBaseOptions(url: '/api'))
+      .baseOptions(const AppHttpClientBaseOptions(
+          url: 'https://www.fernandosantos.tk/gradugo/api'))
       .build();
 
   Future<RestResult<List<GraduGoEvent>>> getEvents() async {
@@ -34,12 +37,13 @@ final class GraduGoApi {
   }
 
   Future<RestResult<List<GraduGoPartner>>> getPartners({
+    String? name,
     String? city,
     String? segment,
   }) async {
     final response = await _httpClient.get<List>(
       '/partners',
-      queryParameters: {'city': city, 'segment': segment},
+      queryParameters: {'name': name, 'city': city, 'segment': segment},
     );
 
     return switch (response.statusCode) {
