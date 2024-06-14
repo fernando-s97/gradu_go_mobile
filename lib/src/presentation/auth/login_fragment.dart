@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gradu_go/src/data/graduate_dao.dart';
 import 'package:gradu_go/src/domain/model/graduate.dart';
 import 'package:gradu_go/src/helpers/util.dart';
 import 'package:gradu_go/src/presentation/digital_id_card/digital_id_card_page.dart';
