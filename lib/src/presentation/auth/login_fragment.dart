@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gradu_go/src/core/dependency_injection.dart';
+import 'package:gradu_go/src/core/dependency_injection/dependency_injection.dart';
 import 'package:gradu_go/src/domain/model/graduate.dart';
 import 'package:gradu_go/src/domain/use_case/authenticate_graduate_use_case.dart';
 import 'package:gradu_go/src/domain/use_case/get_graduate_details_use_case.dart';

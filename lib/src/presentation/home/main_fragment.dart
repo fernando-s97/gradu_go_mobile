@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gradu_go/src/core/dependency_injection.dart';
+import 'package:gradu_go/src/core/dependency_injection/dependency_injection.dart';
 import 'package:gradu_go/src/domain/use_case/get_events_use_case.dart';
 import 'package:gradu_go/src/domain/use_case/get_partners_use_case.dart';
 import 'package:gradu_go/src/helpers/events_list.dart';
