@@ -74,7 +74,7 @@ final class _MainFragmentState extends State<MainFragment> {
   Widget _buildEventsList() {
     if (Repository.events.isEmpty) {
       return FutureBuilder(
-        future: dependencyManager<GetEventsUseCase>().invoke(),
+        future: dependencyInjection<GetEventsUseCase>().invoke(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             Repository.events = snapshot.data ?? [];
@@ -183,11 +183,11 @@ final class _MainFragmentState extends State<MainFragment> {
       ? PartnersList(Repository.partners)
       : FutureBuilder(
           future: Repository.filterType == FilterType.citySegment
-              ? dependencyManager<GetPartnersUseCase>().invoke(
+              ? dependencyInjection<GetPartnersUseCase>().invoke(
                   city: Repository.currentCity,
                   segment: Repository.currentSegment,
                 )
-              : dependencyManager<GetPartnersUseCase>()
+              : dependencyInjection<GetPartnersUseCase>()
                   .invoke(name: Repository.searchedPartner),
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {
