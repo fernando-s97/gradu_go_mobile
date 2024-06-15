@@ -15,7 +15,7 @@ final class EventRepositoryImpl implements EventRepository {
   @override
   Future<List<Event>?> getAll() async {
     final events = await _graduGoApi.getEvents();
-    
+
     return switch (events) {
       RestResultGenericError<List<GraduGoEvent>>() => null,
       RestResultNetworkError<List<GraduGoEvent>>() => null,

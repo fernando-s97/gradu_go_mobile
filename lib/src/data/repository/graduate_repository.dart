@@ -31,7 +31,7 @@ final class GraduateRepositoryImpl implements GraduateRepository {
   @override
   Future<Graduate?> getDetails({required String id}) async {
     final details = await _graduGoApi.getGraduateDetails(id: id);
-    
+
     return switch (details) {
       RestResultGenericError<GraduGoGraduate>() => null,
       RestResultNetworkError<GraduGoGraduate>() => null,

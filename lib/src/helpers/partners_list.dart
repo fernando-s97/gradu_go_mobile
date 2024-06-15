@@ -37,7 +37,8 @@ final class PartnersList extends StatelessWidget {
         ],
       );
 
-  Future<void> _onPartnerClick(BuildContext context, int index) => Navigator.push(
+  Future<void> _onPartnerClick(BuildContext context, int index) =>
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => PartnerPage(partner: _partnersList[index]),

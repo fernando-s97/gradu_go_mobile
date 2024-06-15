@@ -9,8 +9,11 @@ import 'package:injectable/injectable.dart';
 @lazySingleton
 final class GraduGoApi {
   final AppHttpClient _httpClient = AppHttpClientBuilder()
-      .baseOptions(const AppHttpClientBaseOptions(
-          url: 'https://www.fernandosantos.tk/gradugo/api'))
+      .baseOptions(
+        const AppHttpClientBaseOptions(
+          url: 'https://www.fernandosantos.tk/gradugo/api',
+        ),
+      )
       .build();
 
   Future<RestResult<List<GraduGoEvent>>> getEvents() async {

@@ -33,7 +33,8 @@ final class EventsList extends StatelessWidget {
         scale: 0.9,
       );
 
-  Future<void> _onItemClick(BuildContext context, Event event) => Navigator.push(
+  Future<void> _onItemClick(BuildContext context, Event event) =>
+      Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => EventPage(event: event)),
       );

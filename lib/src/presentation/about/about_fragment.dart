@@ -39,7 +39,8 @@ final class AboutFragment extends StatelessWidget {
         ],
       );
 
-  Widget _buildDoubts(BuildContext context) => Util.buildExternalWithDescription(
+  Widget _buildDoubts(BuildContext context) =>
+      Util.buildExternalWithDescription(
         context,
         'whatsapp://send?phone=+55012996270806',
         Util.whatsappImagePath,

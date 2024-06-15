@@ -13,8 +13,11 @@ final class PartnerRepositoryImpl implements PartnerRepository {
   final GraduGoApi _graduGoApi;
 
   @override
-  Future<List<Partner>?> getAll(
-      {String? name, String? city, String? segment}) async {
+  Future<List<Partner>?> getAll({
+    String? name,
+    String? city,
+    String? segment,
+  }) async {
     final partners =
         await _graduGoApi.getPartners(name: name, city: city, segment: segment);
 

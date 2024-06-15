@@ -51,8 +51,10 @@ final class Util {
           context: context,
           builder: (BuildContext context) => AlertDialog(
             title: const Text('Falha carregar aplicação'),
-            content: const Text('Não foi possível abrir a aplicação necessária. '
-                'Verifique se ela está instalada.'),
+            content: const Text(
+              'Não foi possível abrir a aplicação necessária. '
+              'Verifique se ela está instalada.',
+            ),
             actions: <Widget>[
               TextButton(
                 child: const Text('OK'),
