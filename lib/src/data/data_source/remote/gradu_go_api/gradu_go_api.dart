@@ -1,9 +1,9 @@
-import 'package:gradu_go/src/core/model/rest_result.dart';
-import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_event.dart';
-import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_graduate.dart';
-import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_partner.dart';
-import 'package:gradu_go/src/data/http_client/app_http_client.dart';
-import 'package:gradu_go/src/data/http_client/model/app_http_client_base_options.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/gradu_go_event.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/gradu_go_graduate.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/gradu_go_partner.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/rest_result.dart';
+import 'package:gradu_go/src/data/data_source/remote/http_client/app_http_client.dart';
+import 'package:gradu_go/src/data/data_source/remote/http_client/model/app_http_client_base_options.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

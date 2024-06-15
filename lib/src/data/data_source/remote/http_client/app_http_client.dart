@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:gradu_go/src/core/extensions/generic_extensions.dart';
-import 'package:gradu_go/src/data/http_client/model/app_http_client_base_options.dart';
-import 'package:gradu_go/src/data/http_client/model/app_http_client_response.dart';
+import 'package:gradu_go/src/data/data_source/remote/http_client/model/app_http_client_base_options.dart';
+import 'package:gradu_go/src/data/data_source/remote/http_client/model/app_http_client_response.dart';
 
 abstract interface class AppHttpClient {
   const AppHttpClient();

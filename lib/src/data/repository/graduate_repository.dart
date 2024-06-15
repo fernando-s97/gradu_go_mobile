@@ -1,6 +1,6 @@
-import 'package:gradu_go/src/core/model/rest_result.dart';
-import 'package:gradu_go/src/data/data_source/gradu_go_api/gradu_go_api.dart';
-import 'package:gradu_go/src/data/data_source/gradu_go_api/model/gradu_go_graduate.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/gradu_go_api.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/gradu_go_graduate.dart';
+import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/rest_result.dart';
 import 'package:gradu_go/src/domain/model/graduate.dart';
 import 'package:gradu_go/src/domain/repository/graduate_repository.dart';
 import 'package:injectable/injectable.dart';
