@@ -23,7 +23,7 @@ final class AppHttpClientBuilder {
   }
 
   AppHttpClient build() {
-    return DioAppHttpClient(
+    return _DioAppHttpClient(
       baseOptions: _baseOptions?.let((it) {
         return BaseOptions(baseUrl: it.url ?? '');
       }),
@@ -31,8 +31,8 @@ final class AppHttpClientBuilder {
   }
 }
 
-final class DioAppHttpClient implements AppHttpClient {
-  DioAppHttpClient({required BaseOptions? baseOptions})
+final class _DioAppHttpClient implements AppHttpClient {
+  _DioAppHttpClient({required BaseOptions? baseOptions})
       : _dio = Dio(baseOptions);
 
   final Dio _dio;
