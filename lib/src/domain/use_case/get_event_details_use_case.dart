@@ -10,7 +10,7 @@ final class GetEventDetailsUseCase {
 
   final EventRepository _eventRepository;
 
-  Future<Event?> invoke({required String eventId}) async {
+  Future<Event?> execute({required String eventId}) async {
     final events = await _eventRepository.getAll();
     return events?.singleWhereOrNull((it) => it.id == eventId);
   }

@@ -9,7 +9,7 @@ final class GetPartnersUseCase {
 
   final PartnerRepository _partnerRepository;
 
-  Future<List<Partner>?> invoke({
+  Future<List<Partner>?> execute({
     String? name,
     String? city,
     String? segment,

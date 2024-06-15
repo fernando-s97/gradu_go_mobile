@@ -110,7 +110,7 @@ final class _LoginFragmentState extends State<LoginFragment> {
     try {
       try {
         final authenticationResult =
-            await dependencyInjection<AuthenticateGraduateUseCase>().invoke(
+            await dependencyInjection<AuthenticateGraduateUseCase>().execute(
           credential: GraduateCredential(
             email: _userTEC.text,
             password: _passwordTEC.text,
@@ -126,7 +126,7 @@ final class _LoginFragmentState extends State<LoginFragment> {
       }
 
       final graduate =
-          await dependencyInjection<GetGraduateDetailsUseCase>().invoke(
+          await dependencyInjection<GetGraduateDetailsUseCase>().execute(
         id: _userTEC.text,
       );
       if (graduate == null) throw Exception('Falha ao recuperar seus dados');

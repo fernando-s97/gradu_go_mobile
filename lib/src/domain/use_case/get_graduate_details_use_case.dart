@@ -10,6 +10,6 @@ final class GetGraduateDetailsUseCase {
 
   final GraduateRepository _graduateRepository;
 
-  Future<Graduate?> invoke({required String id}) =>
+  Future<Graduate?> execute({required String id}) =>
       _graduateRepository.getDetails(id: id);
 }

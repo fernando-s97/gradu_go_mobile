@@ -9,6 +9,6 @@ final class GetEventsUseCase {
 
   final EventRepository _eventRepository;
 
-  Future<List<Event>?> invoke({String? name, String? city, String? segment}) =>
+  Future<List<Event>?> execute({String? name, String? city, String? segment}) =>
       _eventRepository.getAll();
 }

@@ -10,6 +10,6 @@ final class AuthenticateGraduateUseCase {
 
   final GraduateRepository _graduateRepository;
 
-  Future<String?> invoke({required GraduateCredential credential}) =>
+  Future<String?> execute({required GraduateCredential credential}) =>
       _graduateRepository.authenticate(credential: credential);
 }

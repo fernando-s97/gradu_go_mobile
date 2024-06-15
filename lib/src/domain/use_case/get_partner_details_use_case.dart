@@ -10,7 +10,7 @@ final class GetPartnerDetailsUseCase {
 
   final PartnerRepository _partnerRepository;
 
-  Future<Partner?> invoke({required String partnerId}) async {
+  Future<Partner?> execute({required String partnerId}) async {
     final partners = await _partnerRepository.getAll();
     return partners?.singleWhereOrNull((it) => it.id == partnerId);
   }
