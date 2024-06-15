@@ -110,7 +110,7 @@ final class _LoginFragmentState extends State<LoginFragment> {
     try {
       try {
         final authenticationResult =
-            await getIt<AuthenticateGraduateUseCase>().invoke(
+            await dependencyManager<AuthenticateGraduateUseCase>().invoke(
           credential: GraduateCredential(
             email: _userTEC.text,
             password: _passwordTEC.text,
@@ -126,7 +126,7 @@ final class _LoginFragmentState extends State<LoginFragment> {
       }
 
       final graduate =
-          await getIt<GetGraduateDetailsUseCase>().invoke(id: _userTEC.text);
+          await dependencyManager<GetGraduateDetailsUseCase>().invoke(id: _userTEC.text);
       if (graduate == null) throw Exception('Falha ao recuperar seus dados');
 
       if (mounted) {
