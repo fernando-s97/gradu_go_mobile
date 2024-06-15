@@ -6,7 +6,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.config.dart"
   errors:
-    # For Freezed
+    # Added for Freezed classes with JsonKey annotations
     invalid_annotation_target: ignore
     always_declare_return_types: error
     constant_identifier_names: error
