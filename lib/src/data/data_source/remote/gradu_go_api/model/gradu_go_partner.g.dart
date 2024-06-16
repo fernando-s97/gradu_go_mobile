@@ -16,7 +16,7 @@ _$GraduGoPartnerImpl _$$GraduGoPartnerImplFromJson(Map<String, dynamic> json) =>
       facebook: json['facebook'] as String?,
       instagram: json['instagram'] as String?,
       discount: json['discount'] as String?,
-      segments: json['segments'] as String?,
+      segment: json['segment'] as String?,
     );
 
 Map<String, dynamic> _$$GraduGoPartnerImplToJson(
@@ -30,5 +30,5 @@ Map<String, dynamic> _$$GraduGoPartnerImplToJson(
       'facebook': instance.facebook,
       'instagram': instance.instagram,
       'discount': instance.discount,
-      'segments': instance.segments,
+      'segment': instance.segment,
     };

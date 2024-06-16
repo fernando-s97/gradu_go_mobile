@@ -18,7 +18,7 @@ final class PartnersList extends StatelessWidget {
         child: ListTile(
           leading: _buildLogo(index),
           title: Text(_partnersList[index].name),
-          subtitle: Text(_partnersList[index].segments ?? ''),
+          subtitle: Text(_partnersList[index].segment ?? ''),
           onTap: () => _onPartnerClick(context, index),
         ),
       );

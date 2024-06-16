@@ -32,7 +32,7 @@ final class _PartnerPageState extends State<PartnerPage> {
                 padding: const EdgeInsets.all(Util.defaultPadding),
                 shrinkWrap: true,
                 children: [
-                  _buildSegment(widget.partner.segments),
+                  _buildSegment(widget.partner.segment),
                   _buildDiscount(widget.partner.discount),
                   _buildContact(widget.partner.phone),
                   Util.buildExternals(

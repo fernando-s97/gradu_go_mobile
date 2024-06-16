@@ -14,7 +14,7 @@ class GraduGoPartner with _$GraduGoPartner {
     required String? facebook,
     required String? instagram,
     required String? discount,
-    required String? segments,
+    required String? segment,
   }) = _GraduGoPartner;
 
   factory GraduGoPartner.fromJson(Map<String, Object?> json) =>

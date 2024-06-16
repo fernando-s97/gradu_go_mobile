@@ -28,7 +28,8 @@ mixin _$GraduGoPartner {
   String? get facebook => throw _privateConstructorUsedError;
   String? get instagram => throw _privateConstructorUsedError;
   String? get discount => throw _privateConstructorUsedError;
-  String? get segments => throw _privateConstructorUsedError;
+
+  String? get segment => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
@@ -45,7 +46,7 @@ class _$GraduGoPartnerImpl implements _GraduGoPartner {
       required this.facebook,
       required this.instagram,
       required this.discount,
-      required this.segments});
+      required this.segment});
 
   factory _$GraduGoPartnerImpl.fromJson(Map<String, dynamic> json) =>
       _$$GraduGoPartnerImplFromJson(json);
@@ -67,11 +68,11 @@ class _$GraduGoPartnerImpl implements _GraduGoPartner {
   @override
   final String? discount;
   @override
-  final String? segments;
+  final String? segment;
 
   @override
   String toString() {
-    return 'GraduGoPartner(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segments: $segments)';
+    return 'GraduGoPartner(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segment: $segment)';
   }
 
   @override
@@ -90,14 +91,13 @@ class _$GraduGoPartnerImpl implements _GraduGoPartner {
                 other.instagram == instagram) &&
             (identical(other.discount, discount) ||
                 other.discount == discount) &&
-            (identical(other.segments, segments) ||
-                other.segments == segments));
+            (identical(other.segment, segment) || other.segment == segment));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, logo, name, address, phone,
-      facebook, instagram, discount, segments);
+      facebook, instagram, discount, segment);
 
   @override
   Map<String, dynamic> toJson() {
@@ -117,7 +117,7 @@ abstract class _GraduGoPartner implements GraduGoPartner {
       required final String? facebook,
       required final String? instagram,
       required final String? discount,
-      required final String? segments}) = _$GraduGoPartnerImpl;
+      required final String? segment}) = _$GraduGoPartnerImpl;
 
   factory _GraduGoPartner.fromJson(Map<String, dynamic> json) =
       _$GraduGoPartnerImpl.fromJson;
@@ -139,5 +139,5 @@ abstract class _GraduGoPartner implements GraduGoPartner {
   @override
   String? get discount;
   @override
-  String? get segments;
+  String? get segment;
 }

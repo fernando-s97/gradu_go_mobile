@@ -24,7 +24,8 @@ mixin _$Partner {
   String? get facebook => throw _privateConstructorUsedError;
   String? get instagram => throw _privateConstructorUsedError;
   String? get discount => throw _privateConstructorUsedError;
-  String? get segments => throw _privateConstructorUsedError;
+
+  String? get segment => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PartnerCopyWith<Partner> get copyWith => throw _privateConstructorUsedError;
@@ -44,7 +45,7 @@ abstract class $PartnerCopyWith<$Res> {
       String? facebook,
       String? instagram,
       String? discount,
-      String? segments});
+      String? segment});
 }
 
 /// @nodoc
@@ -68,7 +69,7 @@ class _$PartnerCopyWithImpl<$Res, $Val extends Partner>
     Object? facebook = freezed,
     Object? instagram = freezed,
     Object? discount = freezed,
-    Object? segments = freezed,
+    Object? segment = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -103,9 +104,9 @@ class _$PartnerCopyWithImpl<$Res, $Val extends Partner>
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
               as String?,
-      segments: freezed == segments
-          ? _value.segments
-          : segments // ignore: cast_nullable_to_non_nullable
+      segment: freezed == segment
+          ? _value.segment
+          : segment // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -127,7 +128,7 @@ abstract class _$$PartnerImplCopyWith<$Res> implements $PartnerCopyWith<$Res> {
       String? facebook,
       String? instagram,
       String? discount,
-      String? segments});
+      String? segment});
 }
 
 /// @nodoc
@@ -149,7 +150,7 @@ class __$$PartnerImplCopyWithImpl<$Res>
     Object? facebook = freezed,
     Object? instagram = freezed,
     Object? discount = freezed,
-    Object? segments = freezed,
+    Object? segment = freezed,
   }) {
     return _then(_$PartnerImpl(
       id: null == id
@@ -184,9 +185,9 @@ class __$$PartnerImplCopyWithImpl<$Res>
           ? _value.discount
           : discount // ignore: cast_nullable_to_non_nullable
               as String?,
-      segments: freezed == segments
-          ? _value.segments
-          : segments // ignore: cast_nullable_to_non_nullable
+      segment: freezed == segment
+          ? _value.segment
+          : segment // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -199,12 +200,12 @@ class _$PartnerImpl implements _Partner {
       {required this.id,
       required this.logo,
       required this.name,
-      this.address,
-      this.phone,
-      this.facebook,
-      this.instagram,
-      this.discount,
-      this.segments});
+      required this.address,
+      required this.phone,
+      required this.facebook,
+      required this.instagram,
+      required this.discount,
+      required this.segment});
 
   @override
   final String id;
@@ -223,11 +224,11 @@ class _$PartnerImpl implements _Partner {
   @override
   final String? discount;
   @override
-  final String? segments;
+  final String? segment;
 
   @override
   String toString() {
-    return 'Partner(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segments: $segments)';
+    return 'Partner(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segment: $segment)';
   }
 
   @override
@@ -246,13 +247,12 @@ class _$PartnerImpl implements _Partner {
                 other.instagram == instagram) &&
             (identical(other.discount, discount) ||
                 other.discount == discount) &&
-            (identical(other.segments, segments) ||
-                other.segments == segments));
+            (identical(other.segment, segment) || other.segment == segment));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, logo, name, address, phone,
-      facebook, instagram, discount, segments);
+      facebook, instagram, discount, segment);
 
   @JsonKey(ignore: true)
   @override
@@ -266,12 +266,12 @@ abstract class _Partner implements Partner {
       {required final String id,
       required final String logo,
       required final String name,
-      final String? address,
-      final String? phone,
-      final String? facebook,
-      final String? instagram,
-      final String? discount,
-      final String? segments}) = _$PartnerImpl;
+      required final String? address,
+      required final String? phone,
+      required final String? facebook,
+      required final String? instagram,
+      required final String? discount,
+      required final String? segment}) = _$PartnerImpl;
 
   @override
   String get id;
@@ -290,7 +290,7 @@ abstract class _Partner implements Partner {
   @override
   String? get discount;
   @override
-  String? get segments;
+  String? get segment;
   @override
   @JsonKey(ignore: true)
   _$$PartnerImplCopyWith<_$PartnerImpl> get copyWith =>

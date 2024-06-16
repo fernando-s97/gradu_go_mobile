@@ -42,6 +42,6 @@ extension on GraduGoPartner {
         facebook: facebook,
         instagram: instagram,
         discount: discount,
-        segments: segments,
+        segment: segment,
       );
 }
