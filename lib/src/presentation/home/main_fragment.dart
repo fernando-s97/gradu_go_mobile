@@ -10,11 +10,13 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 
 final class MainFragment extends StatefulWidget {
+  const MainFragment({super.key});
+
   @override
-  _MainFragmentState createState() => _MainFragmentState();
+  State<MainFragment> createState() => MainFragmentState();
 }
 
-final class _MainFragmentState extends State<MainFragment> {
+final class MainFragmentState extends State<MainFragment> {
   final navigatorKey = GlobalKey<NavigatorState>();
   final TextEditingController _searchedPartnerTEC = TextEditingController();
 
@@ -30,7 +32,7 @@ final class _MainFragmentState extends State<MainFragment> {
   Widget build(BuildContext context) => Scaffold(
         resizeToAvoidBottomInset: false,
         body: RefreshIndicator(
-          onRefresh: () => _onRefresh(),
+          onRefresh: _onRefresh,
           child: Column(
             children: <Widget>[
               _buildEventsList(),

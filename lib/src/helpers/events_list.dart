@@ -4,7 +4,7 @@ import 'package:gradu_go/src/domain/model/event.dart';
 import 'package:gradu_go/src/presentation/event_details/event_page.dart';
 
 final class EventsList extends StatelessWidget {
-  const EventsList(this._eventsList);
+  const EventsList(this._eventsList, {super.key});
   final List<Event> _eventsList;
 
   @override

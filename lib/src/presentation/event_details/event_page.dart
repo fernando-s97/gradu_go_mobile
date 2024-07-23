@@ -5,12 +5,12 @@ import 'package:intl/intl.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final class EventPage extends StatefulWidget {
-  const EventPage({super.key, required this.event});
+  const EventPage({required this.event, super.key});
 
   final Event event;
 
   @override
-  State<StatefulWidget> createState() => _EventPageState();
+  State<EventPage> createState() => _EventPageState();
 }
 
 final class _EventPageState extends State<EventPage> {

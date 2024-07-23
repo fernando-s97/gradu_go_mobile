@@ -5,12 +5,12 @@ import 'package:gradu_go/src/helpers/util.dart';
 import 'package:intl/intl.dart';
 
 final class DigitalIdCard extends StatefulWidget {
-  const DigitalIdCard({super.key, required this.graduate});
+  const DigitalIdCard({required this.graduate, super.key});
 
   final Graduate graduate;
 
   @override
-  _DigitalIdCardState createState() => _DigitalIdCardState();
+  State<DigitalIdCard> createState() => _DigitalIdCardState();
 }
 
 final class _DigitalIdCardState extends State<DigitalIdCard> {
@@ -48,7 +48,7 @@ final class _DigitalIdCardState extends State<DigitalIdCard> {
             child: Padding(
               padding: const EdgeInsets.only(
                 right: Util.defaultPadding,
-                bottom: 10.0,
+                bottom: 10,
                 left: Util.defaultPadding,
               ),
               child: Row(
@@ -63,7 +63,7 @@ final class _DigitalIdCardState extends State<DigitalIdCard> {
                         '${widget.graduate.name.toUpperCase()}\n',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
@@ -71,15 +71,16 @@ final class _DigitalIdCardState extends State<DigitalIdCard> {
                         '${widget.graduate.program.toUpperCase()}\n',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
                       Text(
-                        '${widget.graduate.institution.toUpperCase()} | ${DateFormat(Util.digitalIdCardDateFormat).format(widget.graduate.graduationDate).toUpperCase()}',
+                        '${widget.graduate.institution.toUpperCase()} | '
+                        '${DateFormat(Util.digitalIdCardDateFormat).format(widget.graduate.graduationDate).toUpperCase()}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
+                          fontSize: 16,
                           color: Colors.white,
                         ),
                       ),
@@ -97,7 +98,7 @@ final class _DigitalIdCardState extends State<DigitalIdCard> {
         children: <Widget>[
           Image.asset(Util.digitalIdCardBackImagePath, fit: BoxFit.fill),
           Padding(
-            padding: const EdgeInsets.only(bottom: 100.0),
+            padding: const EdgeInsets.only(bottom: 100),
             child: Align(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -107,14 +108,14 @@ final class _DigitalIdCardState extends State<DigitalIdCard> {
                         .toUpperCase(),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
+                      fontSize: 20,
                     ),
                   ),
                   Text(
                     'Projeto: ${widget.graduate.project}'.toUpperCase(),
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
+                      fontSize: 20,
                     ),
                   ),
                 ],

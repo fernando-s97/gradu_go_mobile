@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gradu_go/src/helpers/util.dart';
 
 final class BecomePartnerFragment extends StatelessWidget {
+  const BecomePartnerFragment({super.key});
+
   @override
   Widget build(BuildContext context) => ListView(
         padding: const EdgeInsets.all(Util.defaultPadding),
@@ -19,7 +21,8 @@ final class BecomePartnerFragment extends StatelessWidget {
           Util.buildBoldText('SEJA UMA EMPRESA PARCEIRA'),
           Util.buildSpaceBetweenWidgets(),
           const Text(
-            'Envie sua mensagem e seja mais um parceiro do nosso clube de vantagens.',
+            'Envie sua mensagem e seja mais um parceiro do nosso clube de '
+                'vantagens.',
           ),
           Util.buildSpaceBetweenWidgets(),
         ],
@@ -31,7 +34,8 @@ final class BecomePartnerFragment extends StatelessWidget {
           GestureDetector(
             onTap: () => Util.openURL(
               context,
-              'mailto:nilton.comark@celebraformaturas.com.br?subject=Celebra Club - Desejo me tornar parceiro',
+              'mailto:nilton.comark@celebraformaturas.com.br?subject=Celebra '
+                  'Club - Desejo me tornar parceiro',
             ),
             child: Util.buildImage(Util.emailImagePath),
           ),

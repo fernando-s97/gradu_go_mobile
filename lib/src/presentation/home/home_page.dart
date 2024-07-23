@@ -6,23 +6,26 @@ import 'package:gradu_go/src/presentation/become_partner/become_partner_fragment
 import 'package:gradu_go/src/presentation/home/main_fragment.dart';
 
 final class HomePage extends StatefulWidget {
-  final drawerItems = [
-    DrawerItem('Home', Icons.home),
-    DrawerItem('Sobre', Icons.info),
-    DrawerItem('Seja Parceiro', Icons.group_add),
-    DrawerItem('Carteirinha Digital', Icons.account_box),
-  ];
+  HomePage({super.key})
+      : drawerItems = [
+          DrawerItem('Home', Icons.home),
+          DrawerItem('Sobre', Icons.info),
+          DrawerItem('Seja Parceiro', Icons.group_add),
+          DrawerItem('Carteirinha Digital', Icons.account_box),
+        ];
+
+  final List<DrawerItem> drawerItems;
 
   @override
-  State<StatefulWidget> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 final class _HomePageState extends State<HomePage> {
   static final _scaffoldKey = GlobalKey<ScaffoldState>();
   final fragmentsList = [
-    MainFragment(),
-    AboutFragment(),
-    BecomePartnerFragment(),
+    const MainFragment(),
+    const AboutFragment(),
+    const BecomePartnerFragment(),
     LoginFragment(_HomePageState._scaffoldKey),
   ];
   var _selectedDrawerIndex = 0;
@@ -56,7 +59,7 @@ final class _HomePageState extends State<HomePage> {
   }
 
   void _onSelectItem(int index) {
-    int effectiveIndex = index;
+    var effectiveIndex = index;
     if (index < 0 || index > fragmentsList.length - 1) {
       effectiveIndex = 0;
     }

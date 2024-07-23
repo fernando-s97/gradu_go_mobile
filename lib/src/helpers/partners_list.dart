@@ -3,7 +3,7 @@ import 'package:gradu_go/src/domain/model/partner.dart';
 import 'package:gradu_go/src/presentation/partner_details/partner_page.dart';
 
 final class PartnersList extends StatelessWidget {
-  const PartnersList(this._partnersList);
+  const PartnersList(this._partnersList, {super.key});
   final List<Partner> _partnersList;
 
   @override

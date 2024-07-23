@@ -47,7 +47,7 @@ final class Util {
       await launchUrl(effectiveUrl);
     } else {
       if (context.mounted) {
-        showDialog(
+        await showDialog(
           context: context,
           builder: (BuildContext context) => AlertDialog(
             title: const Text('Falha carregar aplicação'),

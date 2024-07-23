@@ -4,12 +4,12 @@ import 'package:gradu_go/src/helpers/util.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final class PartnerPage extends StatefulWidget {
-  const PartnerPage({super.key, required this.partner});
+  const PartnerPage({required this.partner, super.key});
 
   final Partner partner;
 
   @override
-  State<StatefulWidget> createState() => _PartnerPageState();
+  State<PartnerPage> createState() => _PartnerPageState();
 }
 
 final class _PartnerPageState extends State<PartnerPage> {

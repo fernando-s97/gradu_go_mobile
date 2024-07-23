@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gradu_go/src/presentation/home/home_page.dart';
 
 final class GraduGoApp extends StatelessWidget {
+  const GraduGoApp({super.key});
+
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'Gradu Go',

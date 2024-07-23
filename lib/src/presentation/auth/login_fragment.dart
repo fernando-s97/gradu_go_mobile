@@ -8,11 +8,11 @@ import 'package:gradu_go/src/helpers/util.dart';
 import 'package:gradu_go/src/presentation/digital_id_card/digital_id_card_page.dart';
 
 final class LoginFragment extends StatefulWidget {
-  const LoginFragment(this.scaffoldKey);
+  const LoginFragment(this.scaffoldKey, {super.key});
   final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
-  State<StatefulWidget> createState() => _LoginFragmentState();
+  State<LoginFragment> createState() => _LoginFragmentState();
 }
 
 final class _LoginFragmentState extends State<LoginFragment> {
@@ -121,7 +121,8 @@ final class _LoginFragmentState extends State<LoginFragment> {
         }
       } catch (e) {
         throw Exception(
-          'Falha na autenticação. Verifique seus dados e a conexão com a rede e tente novamente',
+          'Falha na autenticação. Verifique seus dados e a conexão com a rede '
+              'e tente novamente',
         );
       }
 
@@ -132,8 +133,8 @@ final class _LoginFragmentState extends State<LoginFragment> {
       if (graduate == null) throw Exception('Falha ao recuperar seus dados');
 
       if (mounted) {
-        Navigator.of(context).push(
-          MaterialPageRoute(
+        await Navigator.of(context).push(
+          MaterialPageRoute<void>(
             builder: (BuildContext context) =>
                 DigitalIdCard(graduate: graduate),
           ),
