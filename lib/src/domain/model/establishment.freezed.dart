@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'partner.dart';
+part of 'establishment.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$Partner {
+mixin _$Establishment {
   String get id => throw _privateConstructorUsedError;
   String get logo => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -24,17 +24,20 @@ mixin _$Partner {
   String? get facebook => throw _privateConstructorUsedError;
   String? get instagram => throw _privateConstructorUsedError;
   String? get discount => throw _privateConstructorUsedError;
-
   String? get segment => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $PartnerCopyWith<Partner> get copyWith => throw _privateConstructorUsedError;
+  /// Create a copy of Establishment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EstablishmentCopyWith<Establishment> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PartnerCopyWith<$Res> {
-  factory $PartnerCopyWith(Partner value, $Res Function(Partner) then) =
-      _$PartnerCopyWithImpl<$Res, Partner>;
+abstract class $EstablishmentCopyWith<$Res> {
+  factory $EstablishmentCopyWith(
+          Establishment value, $Res Function(Establishment) then) =
+      _$EstablishmentCopyWithImpl<$Res, Establishment>;
   @useResult
   $Res call(
       {String id,
@@ -49,15 +52,17 @@ abstract class $PartnerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PartnerCopyWithImpl<$Res, $Val extends Partner>
-    implements $PartnerCopyWith<$Res> {
-  _$PartnerCopyWithImpl(this._value, this._then);
+class _$EstablishmentCopyWithImpl<$Res, $Val extends Establishment>
+    implements $EstablishmentCopyWith<$Res> {
+  _$EstablishmentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Establishment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,10 +118,11 @@ class _$PartnerCopyWithImpl<$Res, $Val extends Partner>
 }
 
 /// @nodoc
-abstract class _$$PartnerImplCopyWith<$Res> implements $PartnerCopyWith<$Res> {
-  factory _$$PartnerImplCopyWith(
-          _$PartnerImpl value, $Res Function(_$PartnerImpl) then) =
-      __$$PartnerImplCopyWithImpl<$Res>;
+abstract class _$$EstablishmentImplCopyWith<$Res>
+    implements $EstablishmentCopyWith<$Res> {
+  factory _$$EstablishmentImplCopyWith(
+          _$EstablishmentImpl value, $Res Function(_$EstablishmentImpl) then) =
+      __$$EstablishmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -132,13 +138,15 @@ abstract class _$$PartnerImplCopyWith<$Res> implements $PartnerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PartnerImplCopyWithImpl<$Res>
-    extends _$PartnerCopyWithImpl<$Res, _$PartnerImpl>
-    implements _$$PartnerImplCopyWith<$Res> {
-  __$$PartnerImplCopyWithImpl(
-      _$PartnerImpl _value, $Res Function(_$PartnerImpl) _then)
+class __$$EstablishmentImplCopyWithImpl<$Res>
+    extends _$EstablishmentCopyWithImpl<$Res, _$EstablishmentImpl>
+    implements _$$EstablishmentImplCopyWith<$Res> {
+  __$$EstablishmentImplCopyWithImpl(
+      _$EstablishmentImpl _value, $Res Function(_$EstablishmentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Establishment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -152,7 +160,7 @@ class __$$PartnerImplCopyWithImpl<$Res>
     Object? discount = freezed,
     Object? segment = freezed,
   }) {
-    return _then(_$PartnerImpl(
+    return _then(_$EstablishmentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -195,8 +203,8 @@ class __$$PartnerImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PartnerImpl implements _Partner {
-  const _$PartnerImpl(
+class _$EstablishmentImpl implements _Establishment {
+  const _$EstablishmentImpl(
       {required this.id,
       required this.logo,
       required this.name,
@@ -228,14 +236,14 @@ class _$PartnerImpl implements _Partner {
 
   @override
   String toString() {
-    return 'Partner(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segment: $segment)';
+    return 'Establishment(id: $id, logo: $logo, name: $name, address: $address, phone: $phone, facebook: $facebook, instagram: $instagram, discount: $discount, segment: $segment)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PartnerImpl &&
+            other is _$EstablishmentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.logo, logo) || other.logo == logo) &&
             (identical(other.name, name) || other.name == name) &&
@@ -254,15 +262,17 @@ class _$PartnerImpl implements _Partner {
   int get hashCode => Object.hash(runtimeType, id, logo, name, address, phone,
       facebook, instagram, discount, segment);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Establishment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$PartnerImplCopyWith<_$PartnerImpl> get copyWith =>
-      __$$PartnerImplCopyWithImpl<_$PartnerImpl>(this, _$identity);
+  _$$EstablishmentImplCopyWith<_$EstablishmentImpl> get copyWith =>
+      __$$EstablishmentImplCopyWithImpl<_$EstablishmentImpl>(this, _$identity);
 }
 
-abstract class _Partner implements Partner {
-  const factory _Partner(
+abstract class _Establishment implements Establishment {
+  const factory _Establishment(
       {required final String id,
       required final String logo,
       required final String name,
@@ -271,7 +281,7 @@ abstract class _Partner implements Partner {
       required final String? facebook,
       required final String? instagram,
       required final String? discount,
-      required final String? segment}) = _$PartnerImpl;
+      required final String? segment}) = _$EstablishmentImpl;
 
   @override
   String get id;
@@ -291,8 +301,11 @@ abstract class _Partner implements Partner {
   String? get discount;
   @override
   String? get segment;
+
+  /// Create a copy of Establishment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$PartnerImplCopyWith<_$PartnerImpl> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EstablishmentImplCopyWith<_$EstablishmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

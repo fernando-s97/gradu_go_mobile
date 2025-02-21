@@ -20,11 +20,11 @@ final class GraduateRepositoryImpl implements GraduateRepository {
     );
 
     return switch (result) {
-      RestResultGenericError<String>() => null,
       RestResultNetworkError<String>() => null,
       RestResultOk<String>(:final value) => value,
       RestResultNotFound<String>() => null,
-      RestResultUnknownStatusCode<String>() => null,
+      RestResultParseError<String>() => null,
+      RestResultUnknown<String>() => null,
     };
   }
 
@@ -33,11 +33,11 @@ final class GraduateRepositoryImpl implements GraduateRepository {
     final details = await _graduGoApi.getGraduateDetails(id: id);
 
     return switch (details) {
-      RestResultGenericError<GraduGoGraduate>() => null,
       RestResultNetworkError<GraduGoGraduate>() => null,
       RestResultOk<GraduGoGraduate>(:final value) => value.toDomain(),
       RestResultNotFound<GraduGoGraduate>() => null,
-      RestResultUnknownStatusCode<GraduGoGraduate>() => null,
+      RestResultParseError<GraduGoGraduate>() => null,
+      RestResultUnknown<GraduGoGraduate>() => null,
     };
   }
 }

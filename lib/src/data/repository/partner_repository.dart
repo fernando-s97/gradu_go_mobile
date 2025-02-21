@@ -1,19 +1,19 @@
 import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/gradu_go_api.dart';
 import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/gradu_go_partner.dart';
 import 'package:gradu_go/src/data/data_source/remote/gradu_go_api/model/rest_result.dart';
-import 'package:gradu_go/src/domain/model/partner.dart';
-import 'package:gradu_go/src/domain/repository/partner_repository.dart';
+import 'package:gradu_go/src/domain/model/establishment.dart';
+import 'package:gradu_go/src/domain/repository/establishment_repository.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: PartnerRepository)
-final class PartnerRepositoryImpl implements PartnerRepository {
+@LazySingleton(as: EstablishmentRepository)
+final class PartnerRepositoryImpl implements EstablishmentRepository {
   const PartnerRepositoryImpl({required GraduGoApi graduGoApi})
       : _graduGoApi = graduGoApi;
 
   final GraduGoApi _graduGoApi;
 
   @override
-  Future<List<Partner>?> getAll({
+  Future<List<Establishment>?> getAll({
     String? name,
     String? city,
     String? segment,
@@ -22,18 +22,18 @@ final class PartnerRepositoryImpl implements PartnerRepository {
         await _graduGoApi.getPartners(name: name, city: city, segment: segment);
 
     return switch (partners) {
-      RestResultGenericError<List<GraduGoPartner>>() => null,
       RestResultNetworkError<List<GraduGoPartner>>() => null,
       RestResultOk<List<GraduGoPartner>>(:final value) =>
         value.map((it) => it.toDomain()).toList(),
       RestResultNotFound<List<GraduGoPartner>>() => null,
-      RestResultUnknownStatusCode<List<GraduGoPartner>>() => null,
+      RestResultParseError<List<GraduGoPartner>>() => null,
+      RestResultUnknown<List<GraduGoPartner>>() => null,
     };
   }
 }
 
 extension on GraduGoPartner {
-  Partner toDomain() => Partner(
+  Establishment toDomain() => Establishment(
         id: id,
         logo: logo,
         name: name,

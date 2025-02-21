@@ -28,9 +28,9 @@ mixin _$GraduGoPartner {
   String? get facebook => throw _privateConstructorUsedError;
   String? get instagram => throw _privateConstructorUsedError;
   String? get discount => throw _privateConstructorUsedError;
-
   String? get segment => throw _privateConstructorUsedError;
 
+  /// Serializes this GraduGoPartner to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -94,7 +94,7 @@ class _$GraduGoPartnerImpl implements _GraduGoPartner {
             (identical(other.segment, segment) || other.segment == segment));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, logo, name, address, phone,
       facebook, instagram, discount, segment);

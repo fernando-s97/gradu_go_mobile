@@ -21,23 +21,23 @@ final class AboutFragment extends StatelessWidget {
         children: <Widget>[
           Util.buildJustifiedText(
             'A Celebra é uma empresa no ramo de formaturas e eventos, líder de '
-                'mercado nas regiões que atende, tendo mais de 20.000 clientes '
-                'em atendimento. Hoje a formatura não é mais somente “uma '
-                'festa”, ela é um conjunto de eventos e situações, que começam '
-                'desde o primeiro ano de faculdade, e que gera consumo dos '
-                'formandos em diversos segmentos do mercado, diretamente e '
-                'indiretamente. Com esse projeto, estamos dando ao formando, '
-                'benefícios exclusivos, que agregam ao pacote de formatura '
-                'adquirido, como descontos em locais de alimentação, '
-                'entretenimento, estética, compras, enfim, uma infinidade de '
-                'empresas, que tem nossa afirmação de qualidade.\n',
+            'mercado nas regiões que atende, tendo mais de 20.000 clientes '
+            'em atendimento. Hoje a formatura não é mais somente “uma '
+            'festa”, ela é um conjunto de eventos e situações, que começam '
+            'desde o primeiro ano de faculdade, e que gera consumo dos '
+            'formandos em diversos segmentos do mercado, diretamente e '
+            'indiretamente. Com esse projeto, estamos dando ao formando, '
+            'benefícios exclusivos, que agregam ao pacote de formatura '
+            'adquirido, como descontos em locais de alimentação, '
+            'entretenimento, estética, compras, enfim, uma infinidade de '
+            'empresas, que tem nossa afirmação de qualidade.\n',
           ),
           Util.buildJustifiedText(
             'Com esse projeto, estamos dando ao formando, benefícios '
-                'exclusivos, que agregam ao pacote de formatura adquirido, '
-                'como descontos em locais de alimentação, entretenimento, '
-                'estética, compras, enfim, uma infinidade de empresas, que tem '
-                'nossa afirmação de qualidade.',
+            'exclusivos, que agregam ao pacote de formatura adquirido, '
+            'como descontos em locais de alimentação, entretenimento, '
+            'estética, compras, enfim, uma infinidade de empresas, que tem '
+            'nossa afirmação de qualidade.',
           ),
           Util.buildSpaceBetweenWidgets(),
         ],
@@ -50,8 +50,8 @@ final class AboutFragment extends StatelessWidget {
           Util.buildSpaceBetweenWidgets(),
           Util.buildJustifiedText(
             'É simples, todo formando pagante da Celebra, tem acesso ao seu '
-                'cartão digital e com ele poderá desfrutar dos descontos '
-                'oferecidos pelas empresas membro do Celebra Club.',
+            'cartão digital e com ele poderá desfrutar dos descontos '
+            'oferecidos pelas empresas membro do Celebra Club.',
           ),
           Util.buildSpaceBetweenWidgets(),
         ],

@@ -25,7 +25,9 @@ mixin _$Graduate {
   DateTime get graduationDate => throw _privateConstructorUsedError;
   GraduateCredential get credential => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Graduate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GraduateCopyWith<Graduate> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -56,6 +58,8 @@ class _$GraduateCopyWithImpl<$Res, $Val extends Graduate>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Graduate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,6 +136,8 @@ class __$$GraduateImplCopyWithImpl<$Res>
       _$GraduateImpl _value, $Res Function(_$GraduateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Graduate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -239,7 +245,9 @@ class _$GraduateImpl implements _Graduate {
   int get hashCode => Object.hash(runtimeType, id, name, program, institution,
       clientCode, project, graduationDate, credential);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Graduate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$GraduateImplCopyWith<_$GraduateImpl> get copyWith =>
@@ -273,8 +281,11 @@ abstract class _Graduate implements Graduate {
   DateTime get graduationDate;
   @override
   GraduateCredential get credential;
+
+  /// Create a copy of Graduate
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GraduateImplCopyWith<_$GraduateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

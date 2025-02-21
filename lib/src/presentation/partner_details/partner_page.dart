@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gradu_go/src/domain/model/partner.dart';
+import 'package:gradu_go/src/domain/model/establishment.dart';
 import 'package:gradu_go/src/helpers/util.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 final class PartnerPage extends StatefulWidget {
   const PartnerPage({required this.partner, super.key});
 
-  final Partner partner;
+  final Establishment partner;
 
   @override
   State<PartnerPage> createState() => _PartnerPageState();

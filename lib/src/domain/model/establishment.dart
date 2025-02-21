@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'partner.freezed.dart';
+part 'establishment.freezed.dart';
 
 @Freezed()
-class Partner with _$Partner {
-  const factory Partner({
+class Establishment with _$Establishment {
+  const factory Establishment({
     required String id,
     required String logo,
     required String name,
@@ -14,5 +14,5 @@ class Partner with _$Partner {
     required String? instagram,
     required String? discount,
     required String? segment,
-  }) = _Partner;
+  }) = _Establishment;
 }

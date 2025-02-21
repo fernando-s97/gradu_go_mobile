@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradu_go/src/core/dependency_injection/dependency_injection.dart';
+import 'package:gradu_go/src/domain/use_case/get_establishments_use_case.dart';
 import 'package:gradu_go/src/domain/use_case/get_events_use_case.dart';
-import 'package:gradu_go/src/domain/use_case/get_partners_use_case.dart';
 import 'package:gradu_go/src/helpers/events_list.dart';
 import 'package:gradu_go/src/helpers/partners_list.dart';
 import 'package:gradu_go/src/helpers/repository.dart';
@@ -185,11 +185,11 @@ final class MainFragmentState extends State<MainFragment> {
       ? PartnersList(Repository.partners)
       : FutureBuilder(
           future: Repository.filterType == FilterType.citySegment
-              ? dependencyInjection<GetPartnersUseCase>().execute(
+              ? dependencyInjection<GetEstablishmentsUseCase>().execute(
                   city: Repository.currentCity,
                   segment: Repository.currentSegment,
                 )
-              : dependencyInjection<GetPartnersUseCase>()
+              : dependencyInjection<GetEstablishmentsUseCase>()
                   .execute(name: Repository.searchedPartner),
           builder: (context, snapshot) {
             if (snapshot.connectionState != ConnectionState.done) {

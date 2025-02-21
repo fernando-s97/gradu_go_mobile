@@ -8,15 +8,15 @@ part 'rest_result.freezed.dart';
   when: FreezedWhenOptions.none,
 )
 sealed class RestResult<T> with _$RestResult<T> {
-  const factory RestResult.genericError({required String message}) =
-      RestResultGenericError;
-
   const factory RestResult.networkError() = RestResultNetworkError;
 
   const factory RestResult.ok({required T value}) = RestResultOk;
 
   const factory RestResult.notFound() = RestResultNotFound;
 
-  const factory RestResult.unknownStatusCode({required int statusCode}) =
-      RestResultUnknownStatusCode;
+  const factory RestResult.parseError({required String message}) =
+      RestResultParseError;
+
+  const factory RestResult.unknown({required int statusCode}) =
+      RestResultUnknown;
 }

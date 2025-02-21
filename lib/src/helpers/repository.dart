@@ -1,5 +1,5 @@
+import 'package:gradu_go/src/domain/model/establishment.dart';
 import 'package:gradu_go/src/domain/model/event.dart';
-import 'package:gradu_go/src/domain/model/partner.dart';
 import 'package:gradu_go/src/helpers/util.dart';
 
 final class Repository {
@@ -42,9 +42,9 @@ final class Repository {
 
   static List<Event> events = [];
 
-  static List<Partner> partners = [];
+  static List<Establishment> partners = [];
 
-  static List<Partner> allPartners = [];
+  static List<Establishment> allPartners = [];
 
   static String? currentCity;
 

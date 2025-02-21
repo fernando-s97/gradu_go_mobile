@@ -1,17 +1,18 @@
 import 'package:collection/collection.dart';
-import 'package:gradu_go/src/domain/model/partner.dart';
-import 'package:gradu_go/src/domain/repository/partner_repository.dart';
+import 'package:gradu_go/src/domain/model/establishment.dart';
+import 'package:gradu_go/src/domain/repository/establishment_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton
 final class GetPartnerDetailsUseCase {
-  const GetPartnerDetailsUseCase({required PartnerRepository partnerRepository})
-      : _partnerRepository = partnerRepository;
+  const GetPartnerDetailsUseCase({
+    required EstablishmentRepository establishmentRepository,
+  }) : _establishmentRepository = establishmentRepository;
 
-  final PartnerRepository _partnerRepository;
+  final EstablishmentRepository _establishmentRepository;
 
-  Future<Partner?> execute({required String partnerId}) async {
-    final partners = await _partnerRepository.getAll();
-    return partners?.singleWhereOrNull((it) => it.id == partnerId);
+  Future<Establishment?> execute({required String id}) async {
+    final establishments = await _establishmentRepository.getAll();
+    return establishments?.singleWhereOrNull((it) => it.id == id);
   }
 }

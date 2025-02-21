@@ -22,7 +22,7 @@ final class BecomePartnerFragment extends StatelessWidget {
           Util.buildSpaceBetweenWidgets(),
           const Text(
             'Envie sua mensagem e seja mais um parceiro do nosso clube de '
-                'vantagens.',
+            'vantagens.',
           ),
           Util.buildSpaceBetweenWidgets(),
         ],
@@ -35,7 +35,7 @@ final class BecomePartnerFragment extends StatelessWidget {
             onTap: () => Util.openURL(
               context,
               'mailto:nilton.comark@celebraformaturas.com.br?subject=Celebra '
-                  'Club - Desejo me tornar parceiro',
+              'Club - Desejo me tornar parceiro',
             ),
             child: Util.buildImage(Util.emailImagePath),
           ),

@@ -17,12 +17,12 @@ final class EventRepositoryImpl implements EventRepository {
     final events = await _graduGoApi.getEvents();
 
     return switch (events) {
-      RestResultGenericError<List<GraduGoEvent>>() => null,
       RestResultNetworkError<List<GraduGoEvent>>() => null,
       RestResultOk<List<GraduGoEvent>>(:final value) =>
         value.map((it) => it.toDomain()).toList(),
       RestResultNotFound<List<GraduGoEvent>>() => null,
-      RestResultUnknownStatusCode<List<GraduGoEvent>>() => null,
+      RestResultParseError<List<GraduGoEvent>>() => null,
+      RestResultUnknown<List<GraduGoEvent>>() => null,
     };
   }
 }

@@ -31,6 +31,7 @@ mixin _$GraduGoGraduate {
   DateTime get graduationDate => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
+  /// Serializes this GraduGoGraduate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -96,7 +97,7 @@ class _$GraduGoGraduateImpl implements _GraduGoGraduate {
                 other.password == password));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, email, name, program,
       institution, clientCode, project, graduationDate, password);

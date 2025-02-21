@@ -22,20 +22,21 @@ final class GraduGoApi {
     return switch (response.statusCode) {
       null => const RestResultNetworkError(),
       200 => () {
+          final List<GraduGoEvent> parsedBody;
+
           try {
-            return RestResultOk(
-              value: response.body!.map((json) {
-                return GraduGoEvent.fromJson(json as Map<String, dynamic>);
-              }).toList(),
-            );
+            parsedBody = response.body!.map((json) {
+              return GraduGoEvent.fromJson(json as Map<String, dynamic>);
+            }).toList();
           } catch (e) {
-            return RestResultGenericError<List<GraduGoEvent>>(
+            return RestResultParseError<List<GraduGoEvent>>(
               message: e.toString(),
             );
           }
+
+          return RestResultOk(value: parsedBody);
         }(),
-      final int statusCode =>
-        RestResultUnknownStatusCode(statusCode: statusCode),
+      final int statusCode => RestResultUnknown(statusCode: statusCode),
     };
   }
 
@@ -52,20 +53,21 @@ final class GraduGoApi {
     return switch (response.statusCode) {
       null => const RestResultNetworkError(),
       200 => () {
+          final List<GraduGoPartner> parsedBody;
+
           try {
-            return RestResultOk(
-              value: response.body!.map((json) {
-                return GraduGoPartner.fromJson(json as Map<String, dynamic>);
-              }).toList(),
-            );
+            parsedBody = response.body!.map((json) {
+              return GraduGoPartner.fromJson(json as Map<String, dynamic>);
+            }).toList();
           } catch (e) {
-            return RestResultGenericError<List<GraduGoPartner>>(
+            return RestResultParseError<List<GraduGoPartner>>(
               message: e.toString(),
             );
           }
+
+          return RestResultOk(value: parsedBody);
         }(),
-      final int statusCode =>
-        RestResultUnknownStatusCode(statusCode: statusCode),
+      final int statusCode => RestResultUnknown(statusCode: statusCode),
     };
   }
 
@@ -81,14 +83,17 @@ final class GraduGoApi {
     return switch (response.statusCode) {
       null => const RestResultNetworkError(),
       200 => () {
+          final String parsedBody;
+
           try {
-            return RestResultOk(value: response.body!);
+            parsedBody = response.body!;
           } catch (e) {
-            return RestResultGenericError<String>(message: e.toString());
+            return RestResultParseError<String>(message: e.toString());
           }
+
+          return RestResultOk(value: parsedBody);
         }(),
-      final int statusCode =>
-        RestResultUnknownStatusCode(statusCode: statusCode),
+      final int statusCode => RestResultUnknown(statusCode: statusCode),
     };
   }
 
@@ -100,21 +105,22 @@ final class GraduGoApi {
     return switch (response.statusCode) {
       null => const RestResultNetworkError(),
       200 => () {
+          final GraduGoGraduate parsedBody;
+
           try {
-            return RestResultOk(
-              value: GraduGoGraduate.fromJson(
-                response.body! as Map<String, dynamic>,
-              ),
+            parsedBody = GraduGoGraduate.fromJson(
+              response.body! as Map<String, dynamic>,
             );
           } catch (e) {
-            return RestResultGenericError<GraduGoGraduate>(
+            return RestResultParseError<GraduGoGraduate>(
               message: e.toString(),
             );
           }
+
+          return RestResultOk(value: parsedBody);
         }(),
       404 => const RestResultNotFound(),
-      final int statusCode =>
-        RestResultUnknownStatusCode(statusCode: statusCode),
+      final int statusCode => RestResultUnknown(statusCode: statusCode),
     };
   }
 }

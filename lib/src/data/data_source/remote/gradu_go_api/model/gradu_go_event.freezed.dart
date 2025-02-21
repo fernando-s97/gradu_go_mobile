@@ -31,6 +31,7 @@ mixin _$GraduGoEvent {
   String get discount => throw _privateConstructorUsedError;
   String get facebook => throw _privateConstructorUsedError;
 
+  /// Serializes this GraduGoEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -91,7 +92,7 @@ class _$GraduGoEventImpl implements _GraduGoEvent {
                 other.facebook == facebook));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, flyer, name, begin, end, address, discount, facebook);

@@ -122,7 +122,7 @@ final class _LoginFragmentState extends State<LoginFragment> {
       } catch (e) {
         throw Exception(
           'Falha na autenticação. Verifique seus dados e a conexão com a rede '
-              'e tente novamente',
+          'e tente novamente',
         );
       }
 

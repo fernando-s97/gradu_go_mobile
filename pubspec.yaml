@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^5.5.0+1
+  dio: ^5.7.0
   url_launcher: ^6.3.0
   transparent_image: ^2.0.1
   flutter_launcher_icons: ^0.13.1
@@ -20,16 +20,15 @@ dependencies:
   injectable: ^2.4.4
   get_it: ^7.7.0
   freezed_annotation: ^2.4.4
-
+  flutter_bloc: any
 dependency_overrides:
   collection: ^1.19.0
 
 dev_dependencies:
-  build_runner: ^2.4.11
+  build_runner: ^2.4.12
   flutter_test:
     sdk: flutter
-  # https://github.com/rrousselGit/freezed/issues/1098#issuecomment-2170379626
-  freezed: ^2.5.2
+  freezed: ^2.5.7
   injectable_generator: ^2.6.2
   json_serializable: ^6.8.0
   lint: ^2.3.0
@@ -42,14 +41,4 @@ flutter_icons:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/launcher_icon.png
-    - assets/images/company_logo.png
-    - assets/images/digital_id_card_back.jpg
-    - assets/images/digital_id_card_front.jpg
-    - assets/images/email_icon.jpg
-    - assets/images/facebook_icon.png
-    - assets/images/instagram_icon.png
-    - assets/images/maps_icon.png
-    - assets/images/phone_icon.png
-    - assets/images/ticket_icon.png
-    - assets/images/whats_icon.png
+    - assets/images/
